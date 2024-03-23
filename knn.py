@@ -29,3 +29,13 @@ for neighbor in neighbors:
 	train_accuracies[neighbor] = knn.score(X_train, y_train)
 	test_accuracies[neighbor] = knn.score(X_test, y_test)
 print(neighbors, '\n', train_accuracies, '\n', test_accuracies)
+
+# Plot test accuracies
+plt.plot(neighbors,test_accuracies.values() , label="Testing Accuracy")
+
+plt.legend()
+plt.xlabel("Number of Neighbors")
+plt.ylabel("Accuracy")
+
+# Display the plot
+plt.show()
